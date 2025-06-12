@@ -1,0 +1,145 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    background: black;
+    color: white;
+    overflow-x: hidden;
+    position: relative;
+    padding-bottom: 100px;
+  }
+  
+  .carousel-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .carousel {
+    width: 90%;
+    max-width: 400px;
+    height: 500px;
+    position: relative;
+  }
+  
+  .carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 20px;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+  }
+  
+  .carousel img.active {
+    opacity: 1;
+    z-index: 2;
+  }
+  
+  .texto {
+    text-align: center;
+    margin: 2rem 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .texto strong {
+    color: red;
+    font-size: 1.6rem;
+  }
+  
+  .contador {
+    text-align: center;
+    font-size: 1.2rem;
+    margin-top: 3rem;
+  }
+  
+  .tempo-box {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding: 1rem 1.5rem;
+    display: inline-block;
+    margin: 1rem auto;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+  }
+  
+  #tempo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+  
+  .musica {
+    text-align: center;
+    margin-top: 3rem;
+  }
+  
+  .musica p {
+    margin-bottom: 0.5rem;
+  }
+  
+  .coracoes {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+  }
+  
+  .coração {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    background: red;
+    clip-path: polygon(50% 0%, 61% 8%, 75% 8%, 88% 20%, 88% 35%, 50% 80%, 12% 35%, 12% 20%, 25% 8%, 39% 8%);
+    opacity: 0.6;
+    animation: cair 6s linear infinite;
+  }
+  
+  @keyframes cair {
+    0% {
+      transform: translateY(-10%);
+      opacity: 0.6;
+    }
+    100% {
+      transform: translateY(110vh);
+      opacity: 0;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .carousel {
+      height: 300px;
+    }
+  
+    .texto,
+    .contador {
+      font-size: 1rem;
+    }
+  
+    .musica {
+      padding: 0 1rem;
+    }
+  
+    #tempo {
+      font-size: 1.2rem;
+    }
+  }
+
+  .desde {
+    margin-top: 0.5rem;
+    font-size: 1.2rem; /* mesmo tamanho do .contador */
+    color: white;
+    text-align: center;
+  }
+  
